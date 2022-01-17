@@ -6,6 +6,7 @@
 package Frames;
 
 import Paneles.Perfil_Bancario;
+import Paneles.Simulador_Credito;
 
 /**
  *
@@ -34,6 +35,7 @@ public class Bancogeneral extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         frame = new javax.swing.JDesktopPane();
         Perfil = new javax.swing.JButton();
+        Perfil1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,7 +61,16 @@ public class Bancogeneral extends javax.swing.JFrame {
                 PerfilActionPerformed(evt);
             }
         });
-        jPanel1.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 210, 80));
+        jPanel1.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 210, 80));
+
+        Perfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Simulador.png"))); // NOI18N
+        Perfil1.setOpaque(false);
+        Perfil1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Perfil1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Perfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 220, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 50.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
@@ -84,6 +95,12 @@ public class Bancogeneral extends javax.swing.JFrame {
         frame.add(venad);
         venad.setVisible(true);
     }//GEN-LAST:event_PerfilActionPerformed
+
+    private void Perfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perfil1ActionPerformed
+        Simulador_Credito venad = new Simulador_Credito();
+        frame.add(venad);
+        venad.setVisible(true);
+    }//GEN-LAST:event_Perfil1ActionPerformed
 
         public void transparencia() {
         Perfil.setOpaque(false);
@@ -127,6 +144,7 @@ public class Bancogeneral extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Perfil;
+    private javax.swing.JButton Perfil1;
     private javax.swing.JDesktopPane frame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

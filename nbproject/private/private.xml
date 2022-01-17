@@ -12,14 +12,12 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Clases/Data_log.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Frames/Login.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Frames/Register.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Clases/Sentences.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Frames/Welcome_bs.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Frames/Bancogeneral.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Clases/Data.java</file>
-            <file>file:/E:/Documentacion/netbeans/PROYECTO_BANCARIO/src/Clases/Conexion.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Paneles/Perfil_Bancario.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Frames/Bancogeneral.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Clases/Sentences.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Paneles/Transacciones.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Clases/Data_clien.java</file>
+            <file>file:/C:/Users/jonathan.mata/Desktop/poo/Proyecto_Bancario/src/Clases/Conexion.java</file>
         </group>
     </open-files>
 </project-private>

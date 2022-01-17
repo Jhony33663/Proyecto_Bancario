@@ -7,6 +7,7 @@ package Frames;
 
 import Paneles.Perfil_Bancario;
 import Paneles.Simulador_Credito;
+import Paneles.Transacciones;
 
 /**
  *
@@ -34,6 +35,7 @@ public class Bancogeneral extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         frame = new javax.swing.JDesktopPane();
+        Perfil2 = new javax.swing.JButton();
         Perfil = new javax.swing.JButton();
         Perfil1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -55,6 +57,14 @@ public class Bancogeneral extends javax.swing.JFrame {
 
         jPanel1.add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 940, 740));
 
+        Perfil2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Component 4.png"))); // NOI18N
+        Perfil2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Perfil2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Perfil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 190, 80));
+
         Perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 40.png"))); // NOI18N
         Perfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,14 +73,13 @@ public class Bancogeneral extends javax.swing.JFrame {
         });
         jPanel1.add(Perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 210, 80));
 
-        Perfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Simulador.png"))); // NOI18N
-        Perfil1.setOpaque(false);
+        Perfil1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 54.png"))); // NOI18N
         Perfil1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Perfil1ActionPerformed(evt);
             }
         });
-        jPanel1.add(Perfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 220, 80));
+        jPanel1.add(Perfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 210, 90));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 50.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
@@ -97,16 +106,31 @@ public class Bancogeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_PerfilActionPerformed
 
     private void Perfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perfil1ActionPerformed
-        Simulador_Credito venad = new Simulador_Credito();
-        frame.add(venad);
-        venad.setVisible(true);
+        // TODO add your handling code here:
+        Simulador_Credito sim = new Simulador_Credito();
+        frame.add(sim);
+        sim.setVisible(true);
     }//GEN-LAST:event_Perfil1ActionPerformed
 
-        public void transparencia() {
+    private void Perfil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perfil2ActionPerformed
+        // TODO add your handling code here:
+        Transacciones tra = new Transacciones();
+        frame.add(tra);
+        tra.setVisible(true);
+    }//GEN-LAST:event_Perfil2ActionPerformed
+
+    public void transparencia() {
         Perfil.setOpaque(false);
         Perfil.setContentAreaFilled(false);
         Perfil.setBorderPainted(false);
+        Perfil1.setOpaque(false);
+        Perfil1.setContentAreaFilled(false);
+        Perfil1.setBorderPainted(false);
+        Perfil2.setOpaque(false);
+        Perfil2.setContentAreaFilled(false);
+        Perfil2.setBorderPainted(false);
     }
+
     /**
      * @param args the command line arguments
      */
@@ -145,6 +169,7 @@ public class Bancogeneral extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Perfil;
     private javax.swing.JButton Perfil1;
+    private javax.swing.JButton Perfil2;
     private javax.swing.JDesktopPane frame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

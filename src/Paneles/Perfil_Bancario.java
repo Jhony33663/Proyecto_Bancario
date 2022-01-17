@@ -33,7 +33,6 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         txt_cedula = new javax.swing.JTextField();
         txt_nombres = new javax.swing.JTextField();
@@ -41,6 +40,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         txt_telefono = new javax.swing.JTextField();
         txt_direccion = new javax.swing.JTextField();
         txt_razon = new javax.swing.JTextField();
+        txt_saldo = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -48,6 +48,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         lbl_aviso = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -57,14 +58,6 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         setToolTipText("");
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton1.setText("VALIDAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 270, 90, -1));
 
         jButton2.setText("GUARDAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +72,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         jPanel1.add(txt_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 160, -1));
         jPanel1.add(txt_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 110, 150, -1));
         jPanel1.add(txt_razon, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 150, -1));
+        jPanel1.add(txt_saldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 230, 150, -1));
 
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("C.I:");
@@ -110,6 +104,10 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         jLabel2.setText("Perfil");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Saldo:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 230, -1, -1));
+
         lbl_aviso.setForeground(new java.awt.Color(255, 0, 51));
         lbl_aviso.setText("*CAMPO OBLIGATORIO");
         jPanel1.add(lbl_aviso, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, -1, -1));
@@ -132,11 +130,6 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     public void limpiar(){
         txt_cedula.setText("");
         txt_nombres.setText("");
@@ -144,6 +137,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
         txt_direccion.setText("");
         txt_telefono.setText("");
         txt_razon.setText("");
+        txt_saldo.setText("");
     }
     
     
@@ -189,6 +183,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
                 dat.setNumero(Integer.parseInt(txt_telefono.getText()));
                 dat.setDireccion(txt_direccion.getText());
                 dat.setCodigo_postal(Integer.parseInt(txt_razon.getText()));
+                dat.setSaldo(Double.parseDouble(txt_saldo.getText()));
                 sen.envio_cliente(dat);
                 
                 }
@@ -203,11 +198,11 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Nombre;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -219,6 +214,7 @@ public class Perfil_Bancario extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_nombres;
     private javax.swing.JTextField txt_razon;
+    private javax.swing.JTextField txt_saldo;
     private javax.swing.JTextField txt_telefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import Frames.Register;
+import Frames.Welcome_bs;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
@@ -52,10 +53,8 @@ public class Sentences extends Conexion {
                 found = true;
             }
             if (found) {
-                JOptionPane.showMessageDialog(null, "datosencontrados");
-                /*  Welcome_SV welcome = new Welcome_SV();
-                    welcome.setVisible(true);
-                    this.setVisible(false);*/
+                Welcome_bs wel = new Welcome_bs();
+                wel.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(null, "ACCESO DENEGADO");
                 JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS");
@@ -74,13 +73,14 @@ public class Sentences extends Conexion {
             //datos y transformo a valores correspondientes
             //consuta a la tabla
             PreparedStatement ps = null;
-            ps = conn.prepareStatement("INSERT INTO `clientes`(`dni`, `Nombres`,`Apellidos`, `Telefono`, `Direccion`, `Razon`)" + "VALUES(?,?,?,?,?,?)");
+            ps = conn.prepareStatement("INSERT INTO `clientes`(`dni`, `Nombres`,`Apellidos`, `Telefono`, `Direccion`, `Razon`, `Saldo`)" + "VALUES(?,?,?,?,?,?,?)");
             ps.setInt(1, dclien.getCedula());
             ps.setString(2, dclien.getNombres());
             ps.setString(3, dclien.getApellidos());
             ps.setInt(4, dclien.getNumero());
             ps.setString(5, dclien.getDireccion());
             ps.setInt(6, dclien.getCodigo_postal());
+            ps.setDouble(7, dclien.getSaldo());
 
             //ejecute consulta y valores
             //execute accion de incerscion 

@@ -28,11 +28,12 @@ public class Bancogeneral extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
-    public void perfil(){
+    public void perfil() {
         Perfil_Bancario perf = new Perfil_Bancario();
         frame.add(perf);
         perf.setVisible(true);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

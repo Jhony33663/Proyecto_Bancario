@@ -19,7 +19,9 @@ import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
 import java.awt.HeadlessException;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.sql.PreparedStatement;
@@ -167,6 +169,15 @@ public class Transacciones extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+    
+    public void abrirPDF(String nombre){
+        try{
+            File ruta=new File("Reporte_De_"+txt_nombre.getText()+".pdf");
+            Desktop.getDesktop().open(ruta);
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }        
     }
 
     /**
@@ -395,26 +406,6 @@ public class Transacciones extends javax.swing.JInternalFrame {
 
     private void btn_retirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_retirarActionPerformed
         // TODO add your handling code here:
-        /*Connection conn = null;
-        try {
-            conn = getConnection();
-            ps = conn.prepareStatement("UPDATE clientes SET Nombres=?,Apellidos=?,Saldo=? WHERE dni=?");
-
-            ps.setString(1, txt_nombre.getText());
-            ps.setString(2, txt_apellido.getText());
-            ps.setString(3, txt_saldo.getText());
-            ps.setString(4, txt_cedula.getText());
-
-            int res = ps.executeUpdate();
-            if (res > 0) {
-                JOptionPane.showMessageDialog(null, "SU SALDO SE HA CARGADO");
-            } else {
-                JOptionPane.showMessageDialog(null, "ERROR VERIFIQUE");
-            }
-            conn.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }*/
         
         nuevo_valor=Double.parseDouble(txt_saldo.getText())-nuevo_valor;
         Datos_Pdf("Retiro");
@@ -443,7 +434,7 @@ public class Transacciones extends javax.swing.JInternalFrame {
        
         try {
             String ruta = System.getProperty("user.home");
-            PdfWriter.getInstance(documento, new FileOutputStream(ruta + "/Desktop/Proyecto_Final/Reporte_De_"+txt_nombre.getText()+".pdf"));
+            PdfWriter.getInstance(documento, new FileOutputStream("Reporte_De_"+txt_nombre.getText()+".pdf"));
             documento.open();
             
             Chunk chunk = new Chunk("Reporte De Movimientos", chapterFont);
@@ -479,6 +470,7 @@ public class Transacciones extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Reporte creado.");
         } catch (DocumentException | HeadlessException | FileNotFoundException e) {
         }
+        abrirPDF(txt_nombre.getText());
     }//GEN-LAST:event_btn_pdfActionPerformed
 
 

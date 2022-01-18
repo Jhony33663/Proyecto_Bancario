@@ -7,6 +7,7 @@ package Paneles;
 
 import Clases.Calculo_Credito;
 import Clases.Datos_Credito;
+import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -23,7 +24,13 @@ public class Simulador_Credito extends javax.swing.JInternalFrame {
     DefaultTableModel model = new DefaultTableModel();
 
     public Simulador_Credito() {
+        
         initComponents();
+        Color myColor = new Color(255,255,208);
+        jScrollPane1.getViewport().setOpaque(false);
+        jtb_tabla.setOpaque(false);
+        jScrollPane1.getViewport().setBackground(myColor);
+        jtb_tabla.setBackground(myColor);
         model = (DefaultTableModel) jtb_tabla.getModel();
     }
 

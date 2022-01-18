@@ -5,15 +5,19 @@
  */
 package Frames;
 
+import Paneles.Admin_LOGGER;
 import Paneles.Perfil_Bancario;
 import Paneles.Simulador_Credito;
 import Paneles.Transacciones;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author jonathan.mata
  */
 public class Bancogeneral extends javax.swing.JFrame {
+
+    boolean acceso = false;
 
     /**
      * Creates new form Bancogeneral
@@ -24,6 +28,11 @@ public class Bancogeneral extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void perfil(){
+        Perfil_Bancario perf = new Perfil_Bancario();
+        frame.add(perf);
+        perf.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,24 +44,34 @@ public class Bancogeneral extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         frame = new javax.swing.JDesktopPane();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         Perfil2 = new javax.swing.JButton();
         Perfil = new javax.swing.JButton();
         Perfil1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 50.png"))); // NOI18N
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-250, 0, 1190, 740));
+
+        frame.setLayer(jPanel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout frameLayout = new javax.swing.GroupLayout(frame);
         frame.setLayout(frameLayout);
         frameLayout.setHorizontalGroup(
             frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 940, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         frameLayout.setVerticalGroup(
             frameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel1.add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 940, 740));
@@ -81,6 +100,9 @@ public class Bancogeneral extends javax.swing.JFrame {
         });
         jPanel1.add(Perfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 210, 90));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/FLOWI_landing_10 abr-05.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-210, 380, 580, 380));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Group 50.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 760));
 
@@ -92,7 +114,9 @@ public class Bancogeneral extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,9 +124,9 @@ public class Bancogeneral extends javax.swing.JFrame {
 
     private void PerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PerfilActionPerformed
         // TODO add your handling code here:
-        Perfil_Bancario venad = new Perfil_Bancario();
-        frame.add(venad);
-        venad.setVisible(true);
+        Admin_LOGGER adm = new Admin_LOGGER();
+        frame.add(adm);
+        adm.setVisible(true);
     }//GEN-LAST:event_PerfilActionPerformed
 
     private void Perfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Perfil1ActionPerformed
@@ -170,8 +194,11 @@ public class Bancogeneral extends javax.swing.JFrame {
     private javax.swing.JButton Perfil;
     private javax.swing.JButton Perfil1;
     private javax.swing.JButton Perfil2;
-    private javax.swing.JDesktopPane frame;
+    public static javax.swing.JDesktopPane frame;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

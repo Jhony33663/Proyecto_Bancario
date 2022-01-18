@@ -20,12 +20,13 @@ public class Simulador_Credito extends javax.swing.JInternalFrame {
     /**
      * Creates new form Simulador_Crédito
      */
-    
-    DefaultTableModel model=new DefaultTableModel();
+    DefaultTableModel model = new DefaultTableModel();
+
     public Simulador_Credito() {
         initComponents();
         model = (DefaultTableModel) jtb_tabla.getModel();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -161,26 +162,26 @@ public class Simulador_Credito extends javax.swing.JInternalFrame {
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
         // TODO add your handling code here:
         DecimalFormat formateador = new DecimalFormat("############.##");
-        
-        if(!txt_monto.getText().isEmpty()){
-            Datos_Credito dat=new Datos_Credito(Double.parseDouble(txt_monto.getText()), 
+
+        if (!txt_monto.getText().isEmpty()) {
+            Datos_Credito dat = new Datos_Credito(Double.parseDouble(txt_monto.getText()),
                     Integer.parseInt(cbx_meses.getSelectedItem().toString()), cbx_pago.getSelectedItem().toString());
             dat.Forma_Pago();
-            
+
             model.setRowCount(0);
-            if(cbx_pago.getSelectedIndex()==0){
+            if (cbx_pago.getSelectedIndex() == 0) {
                 dat.Mostrar_Tabla_F(model);
-            }else if(cbx_pago.getSelectedIndex()==1){
+            } else if (cbx_pago.getSelectedIndex() == 1) {
                 dat.Mostrar_Tabla_D(model);
             }
             lbl_nominal.setText(String.valueOf((formateador.format(dat.getTasa_Nominal()))));
             lbl_efectiva.setText(String.valueOf((formateador.format(dat.getTasa_Efectiva()))));
             lbl_valorfinal.setText(String.valueOf(formateador.format(dat.getMonto_F())));
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Ingrese un valor en el monto");
         }
-        
-        
+
+
     }//GEN-LAST:event_btn_calcularActionPerformed
 
 
